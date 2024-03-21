@@ -1,33 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react"
+import SimpleFetching from "./exercises/1_simple_fetching/SimpleFetching"
+import LoadingStates from "./exercises/2_loading_states/LoadingStates"
+import QueryFetching from "./exercises/3_fetching_query/QueryFetching"
+import ErrorHandling from "./exercises/4_error_handling/ErrorHandling"
+import Selecting from "./exercises/5_selecting/Selecting"
+import DeleteMutation from "./exercises/6_mutation/DeleteMutation"
+import Tags from "./exercises/7_tags/Tags"
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [exercise, setExercise] = useState("1")
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <select name="cars" id="cars" onChange={(e) => setExercise(e.target.value)}>
+        <option value="1">Exercise 1: Simple Fetching</option>
+        <option value="2">Exercise 2: Loading States</option>
+        <option value="3">Exercise 3: Fetching with a query parameter</option>
+        <option value="4">Exercise 4: Errorhandling</option>
+        <option value="5">Exercise 5: Selecting from the response</option>
+        <option value="6">Exercise 6: A simple delete mutation</option>
+        <option value="7">Exercise 7: Handlings Tags</option>
+      </select>
+
+      {exercise === "1" && <SimpleFetching />}
+      {exercise === "2" && <LoadingStates />}
+      {exercise === "3" && <QueryFetching />}
+      {exercise === "4" && <ErrorHandling />}
+      {exercise === "5" && <Selecting />}
+      {exercise === "6" && <DeleteMutation />}
+      {exercise === "7" && <Tags />}
     </>
   )
 }
