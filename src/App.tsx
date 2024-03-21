@@ -1,10 +1,10 @@
 import { useState } from "react"
-import SimpleFetching from "./solutions/1_simple_fetching/SimpleFetching"
-import LoadingStates from "./solutions/2_loading_states/LoadingStates"
-import QueryFetching from "./solutions/3_fetching_query/QueryFetching"
-import ErrorHandling from "./solutions/4_error_handling/ErrorHandling"
-import Selecting from "./solutions/5_selecting/Selecting"
-import PostMutation from "./solutions/6_mutation/PostMutation"
+import SimpleFetching from "./exercises/1_simple_fetching/SimpleFetching"
+import LoadingStates from "./exercises/2_loading_states/LoadingStates"
+import QueryFetching from "./exercises/3_fetching_query/QueryFetching"
+import ErrorHandling from "./exercises/4_error_handling/ErrorHandling"
+import Selecting from "./exercises/5_selecting/Selecting"
+import PostMutation from "./exercises/6_mutation/PostMutation"
 
 function App() {
 
