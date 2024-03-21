@@ -24,10 +24,10 @@
 
 - selectOnlyName
 
-## Exercise 6: A simple delete mutation
+## Exercise 6: A simple post mutation
 
 - create request at api
-- add delete button
+- add create button
 
 ## Exercise 7: Handlings Tags
 

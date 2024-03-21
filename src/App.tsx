@@ -1,11 +1,10 @@
 import { useState } from "react"
-import SimpleFetching from "./exercises/1_simple_fetching/SimpleFetching"
-import LoadingStates from "./exercises/2_loading_states/LoadingStates"
-import QueryFetching from "./exercises/3_fetching_query/QueryFetching"
-import ErrorHandling from "./exercises/4_error_handling/ErrorHandling"
-import Selecting from "./exercises/5_selecting/Selecting"
-import DeleteMutation from "./exercises/6_mutation/DeleteMutation"
-import Tags from "./exercises/7_tags/Tags"
+import SimpleFetching from "./solutions/1_simple_fetching/SimpleFetching"
+import LoadingStates from "./solutions/2_loading_states/LoadingStates"
+import QueryFetching from "./solutions/3_fetching_query/QueryFetching"
+import ErrorHandling from "./solutions/4_error_handling/ErrorHandling"
+import Selecting from "./solutions/5_selecting/Selecting"
+import PostMutation from "./solutions/6_mutation/PostMutation"
 
 function App() {
 
@@ -13,14 +12,13 @@ function App() {
 
   return (
     <>
-      <select name="cars" id="cars" onChange={(e) => setExercise(e.target.value)}>
+      <select onChange={(e) => setExercise(e.target.value)}>
         <option value="1">Exercise 1: Simple Fetching</option>
         <option value="2">Exercise 2: Loading States</option>
         <option value="3">Exercise 3: Fetching with a query parameter</option>
         <option value="4">Exercise 4: Errorhandling</option>
         <option value="5">Exercise 5: Selecting from the response</option>
-        <option value="6">Exercise 6: A simple delete mutation</option>
-        <option value="7">Exercise 7: Handlings Tags</option>
+        <option value="6">Exercise 6: A simple post mutation</option>
       </select>
 
       {exercise === "1" && <SimpleFetching />}
@@ -28,8 +26,7 @@ function App() {
       {exercise === "3" && <QueryFetching />}
       {exercise === "4" && <ErrorHandling />}
       {exercise === "5" && <Selecting />}
-      {exercise === "6" && <DeleteMutation />}
-      {exercise === "7" && <Tags />}
+      {exercise === "6" && <PostMutation />}
     </>
   )
 }
