@@ -1,10 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-
-interface ResponseObject {
-    id: string,
-    name: string,
-    data?: Record<string, string>
-}
+import { ResponseObject } from '../../types'
 
 export const simpleFetchingApi = createApi({
     reducerPath: 'simple_fetching_api',

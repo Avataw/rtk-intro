@@ -1,10 +1,13 @@
 import { useState } from "react"
 import { useGetOneQuery } from "./errorHandlingApi"
+import DisplayObject from "../../components/DisplayObject"
 
 export default function ErrorHandling() {
     const [searchId, setSearchId] = useState("")
 
-    const { data, isError, error } = useGetOneQuery(searchId)
+    const { data, isError, error } = useGetOneQuery(searchId, {
+        skip: !searchId
+    })
 
     return (
         <>
@@ -14,12 +17,7 @@ export default function ErrorHandling() {
 
             {isError && <h3>An error occured! {JSON.stringify(error)}</h3>}
 
-            {data && !isError && (
-                <>
-                    <h5>{data.id}: {data.name}</h5>
-                    <pre>{JSON.stringify(data.data)}</pre>
-                </>
-            )}
+            {data && !isError && <DisplayObject object={data} />}
         </>
     )
 }

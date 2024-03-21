@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useGetOneQuery } from "./queryFetchingApi"
+import DisplayObject from "../../components/DisplayObject"
 
 export default function QueryFetching() {
 
@@ -13,12 +14,7 @@ export default function QueryFetching() {
 
             <input onChange={(e) => setSearchId(e.target.value)} value={searchId} />
 
-            {data && (
-                <>
-                    <h5>{data.id}: {data.name}</h5>
-                    <pre>{JSON.stringify(data.data)}</pre>
-                </>
-            )}
+            {data && <DisplayObject object={data} />}
         </>
     )
 }

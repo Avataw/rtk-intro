@@ -1,16 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { CreationRequest, CreationResponse } from '../../types';
 
-interface ResponseObject {
-    id: string,
-    name: string,
-    data?: Record<string, string>
-}
-
-type CreationRequest = Omit<ResponseObject, 'id'>
-
-interface CreationResponse extends ResponseObject {
-    createdAt: string
-}
 
 export const postMutationApi = createApi({
     reducerPath: 'post_mutation_api',
